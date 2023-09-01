@@ -7,7 +7,9 @@ type statement struct {
 }
 
 func (stmt *statement) Close() error {
+	stmt.ex.Lock()
 	stmt.ex.wasClosed = true
+	stmt.ex.Unlock()
 	return stmt.ex.closeErr
 }
 
