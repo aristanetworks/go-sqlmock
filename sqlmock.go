@@ -292,7 +292,7 @@ func (c *sqlmock) prepare(query string) (*ExpectedPrepare, error) {
 	var ok bool
 
 	for _, next := range c.expected {
-		next.Lock() // Acquire Lock.
+		next.Lock()
 		if next.fulfilled() {
 			fulfilled++
 
@@ -302,7 +302,7 @@ func (c *sqlmock) prepare(query string) (*ExpectedPrepare, error) {
 					break
 				}
 			}
-			next.Unlock() // Unlock the mutex in case loop continues.
+			next.Unlock()
 			continue
 		}
 
@@ -310,7 +310,8 @@ func (c *sqlmock) prepare(query string) (*ExpectedPrepare, error) {
 			if expected, ok = next.(*ExpectedPrepare); ok {
 				break
 			}
-			next.Unlock() // Unlock the mutex when error returned.
+
+			next.Unlock()
 			return nil, fmt.Errorf("call to Prepare statement with query '%s', was not expected, next expectation is: %s", query, next)
 		}
 
@@ -320,7 +321,7 @@ func (c *sqlmock) prepare(query string) (*ExpectedPrepare, error) {
 				break
 			}
 		}
-		next.Unlock() // Unlock the mutex in case loop continues.
+		next.Unlock()
 	}
 
 	if expected == nil {
