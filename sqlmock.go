@@ -299,7 +299,6 @@ func (c *sqlmock) prepare(query string) (*ExpectedPrepare, error) {
 			if pr, ok := next.(*ExpectedPrepare); ok {
 				if err := c.queryMatcher.Match(pr.expectSQL, query); err == nil {
 					expected = pr
-					next.Unlock() // Unlock the mutex when done.
 					break
 				}
 			}
@@ -309,10 +308,8 @@ func (c *sqlmock) prepare(query string) (*ExpectedPrepare, error) {
 
 		if c.ordered {
 			if expected, ok = next.(*ExpectedPrepare); ok {
-				next.Unlock() // Unlock the mutex when done.
 				break
 			}
-
 			next.Unlock() // Unlock the mutex when error returned.
 			return nil, fmt.Errorf("call to Prepare statement with query '%s', was not expected, next expectation is: %s", query, next)
 		}
@@ -320,7 +317,6 @@ func (c *sqlmock) prepare(query string) (*ExpectedPrepare, error) {
 		if pr, ok := next.(*ExpectedPrepare); ok {
 			if err := c.queryMatcher.Match(pr.expectSQL, query); err == nil {
 				expected = pr
-				next.Unlock() // Unlock the mutex when done
 				break
 			}
 		}
@@ -334,9 +330,7 @@ func (c *sqlmock) prepare(query string) (*ExpectedPrepare, error) {
 		}
 		return nil, fmt.Errorf(msg, query)
 	}
-	expected.Lock()
 	defer expected.Unlock()
-
 	if err := c.queryMatcher.Match(expected.expectSQL, query); err != nil {
 		return nil, fmt.Errorf("Prepare: %v", err)
 	}
