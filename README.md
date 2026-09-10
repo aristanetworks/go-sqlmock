@@ -3,6 +3,13 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/DATA-DOG/go-sqlmock)](https://goreportcard.com/report/github.com/DATA-DOG/go-sqlmock)
 [![codecov.io](https://codecov.io/github/DATA-DOG/go-sqlmock/branch/master/graph/badge.svg)](https://codecov.io/github/DATA-DOG/go-sqlmock)
 
+> **Development has moved to Gerrit.**
+>
+> https://gerrit.corp.arista.io/q/project:code.arista.io/aristanetworks/go-sqlmock
+>
+> Canonical name: `code.arista.io/aristanetworks/go-sqlmock`  
+> Do not send new PRs here.
+
 # Sql driver mock for Golang
 
 **sqlmock** is a mock library implementing [sql/driver](https://godoc.org/database/sql/driver). Which has one and only
