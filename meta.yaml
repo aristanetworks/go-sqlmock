@@ -1,4 +1,4 @@
-Reponame: code.arista.io/aristanetworks/go-sqlmock
+Reponame: code.arista.io/open-source-forks/go-sqlmock
 Description: Sql mock driver for golang to test database interactions
 Users:
   Maintainers:
@@ -6,5 +6,5 @@ Users:
   Supervisor: rajshree.sanjayam@arista.com
 Epoch: 1
 ObsoleteNames:
-  - gerrit.corp.arista.io/aristanetworks/go-sqlmock
+  - gerrit.corp.arista.io/open-source-forks/go-sqlmock
   - github.com/aristanetworks/go-sqlmock
