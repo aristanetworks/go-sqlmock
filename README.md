@@ -5,9 +5,10 @@
 
 > **Development has moved to Gerrit.**
 >
-> https://gerrit.corp.arista.io/q/project:code.arista.io/aristanetworks/go-sqlmock
+> https://gerrit.corp.arista.io/q/project:open-source-forks/go-sqlmock
 >
-> Canonical name: `code.arista.io/aristanetworks/go-sqlmock`  
+> Canonical name: `code.arista.io/aristanetworks/go-sqlmock`
+> Gerrit project: `open-source-forks/go-sqlmock`  
 > Do not send new PRs here.
 
 # Sql driver mock for Golang
