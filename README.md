@@ -7,7 +7,7 @@
 >
 > https://gerrit.corp.arista.io/q/project:open-source-forks/go-sqlmock
 >
-> Canonical name: `code.arista.io/aristanetworks/go-sqlmock`
+> Canonical name: `code.arista.io/open-source-forks/go-sqlmock`
 > Gerrit project: `open-source-forks/go-sqlmock`  
 > Do not send new PRs here.
 
